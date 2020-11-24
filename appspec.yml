@@ -1,0 +1,12 @@
+version: 0.0
+os: linux
+files:
+  - source: ./
+    destination: /home/ubuntu/apollo
+hooks:
+  ApplicationStop:
+    - location: prebuild.sh
+      timeout: 10000
+  AfterInstall:
+    - location: buildapollo.sh
+      timeout: 10000
